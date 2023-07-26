@@ -1,0 +1,24 @@
+<div class="container">
+
+    <h1>Busqueda de Paises</h1>
+
+    <div class="busquedaPor">
+        <p>Busqueda por:</p>
+        <div>
+            <mat-form-field>
+                <mat-label>buscar</mat-label>
+                <mat-select (selectionChange)="onSelectionChange($event)">
+                  <mat-option *ngFor="let bus of busqueda" [value]="bus.value">
+                    {{bus.viewValue}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+

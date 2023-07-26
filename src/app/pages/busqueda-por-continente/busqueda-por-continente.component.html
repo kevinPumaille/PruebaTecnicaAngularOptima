@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="busquedaPor">
+    <p>Continente:</p>
+    <div>
+        <mat-form-field>
+            <mat-label>buscar</mat-label>
+            <mat-select (selectionChange)="onSelectionChange($event)">
+              <mat-option *ngFor="let bus of busqueda" [value]="bus.value">
+                {{bus.viewValue}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+  </div>
+
+  <div>
+    <button mat-stroked-button type="submit" (click)="busquedaPaises()">
+      <!-- <mat-icon>done</mat-icon> -->
+      <span>Buscar</span>
+    </button>
+  </div>
+
+
+</div>
+
+<div [hidden]="paises">
+
+  <div class="busquedaPor" >
+    <p>Paises:</p>
+    <div>
+      <mat-form-field>
+        <mat-label>buscar</mat-label>
+        <mat-select (selectionChange)="onSelectionChange2($event)">
+          <mat-option *ngFor="let bus of listaPaises" [value]="bus.value">
+            {{bus.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+</div>
+
+<div  [hidden]="card">
+  <div class="grupo-card" class="card-container">
+    <!-- country-card.component.html -->
+    <mat-card class="country-card">
+      <!-- Parte izquierda con imagen y nombre -->
+      <mat-card-content class="left-content">
+        <div class="image-container">
+          <!-- Aquí puedes agregar la URL de la imagen de la bandera o cualquier otra imagen relacionada -->
+          <img src="{{bandera}}" alt="Bandera del país" class="country-image">
+        </div>
+        <div class="country-name">{{pais}}</div>
+      </mat-card-content>
+
+      <!-- Parte derecha con los detalles -->
+      <mat-card-content class="right-content">
+        <div class="detail-item">
+          <div class="detail-label">Capital:</div>
+          <div class="detail-value">{{capital}}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Región:</div>
+          <div class="detail-value">{{region}}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Subregión:</div>
+          <div class="detail-value">{{subregion}}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Lenguajes:</div>
+          <div class="detail-value">{{lenguajes}}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Continente:</div>
+          <div class="detail-value">{{continente}}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Moneda:</div>
+          <div class="detail-value">{{moneda}}</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
+
